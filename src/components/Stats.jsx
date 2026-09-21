@@ -22,7 +22,7 @@ export default function Stats() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               className="text-center"
             >
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-tight mb-2 tracking-tight">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white font-tight mb-2 tracking-tight">
                 {stat.value}
               </div>
               <div className="text-xs sm:text-sm font-medium text-grey-4">

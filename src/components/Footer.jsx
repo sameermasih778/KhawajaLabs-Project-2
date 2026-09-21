@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, ChevronRight } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -23,19 +24,13 @@ export default function Footer() {
             <div className="md:col-span-5 space-y-4">
               {/* Suprema Logo */}
               <Link to="/" className="flex items-center gap-2 group inline-flex">
-                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative overflow-hidden group-hover:scale-105 transition-transform">
-                  <div className="w-3.5 h-3.5 rounded-full bg-white relative">
-                    <div className="w-2 h-2 rounded-full bg-black absolute -top-0.5 -right-0.5" />
-                  </div>
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold tracking-tight text-white font-tight">Suprema</span>
-                  <span className="text-[10px] font-semibold text-zinc-400 uppercase">UI</span>
+                <div className="flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform">
+                  <img src={logoImg} alt="Suprema Logo" className="h-8 sm:h-10 w-auto object-contain" />
                 </div>
               </Link>
 
               {/* Tagline */}
-              <p className="text-m text-zinc-400 font-normal leading-relaxed max-w-xs">
+              <p className="text-sm text-zinc-400 font-normal leading-relaxed max-w-xs">
                 Plan and navigate from idea to launch.
               </p>
 
@@ -53,7 +48,7 @@ export default function Footer() {
 
               {/* All Systems Operational Pill */}
               <div className="pt-2">
-                <div className="inline-flex items-center gap-2 text-m text-zinc-400 font-medium">
+                <div className="inline-flex items-center gap-2 text-xs text-zinc-400 font-medium">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" />
                   <span>All Systems Operational</span>
                 </div>
@@ -62,10 +57,10 @@ export default function Footer() {
 
             {/* Column 2: Quick Navigation */}
             <div className="md:col-span-3">
-              <h4 className="text-m font-bold text-white mb-4 tracking-tight">
+              <h4 className="text-sm font-bold text-white mb-4 tracking-tight">
                 Quick Navigation
               </h4>
-              <ul className="space-y-3 text-m sm:text-m text-zinc-400 font-normal">
+              <ul className="space-y-3 text-sm text-zinc-400 font-normal">
                 <li><a href="#product-overview" className="hover:text-white transition-colors">Product Overview</a></li>
                 <li><a href="#features-showcase" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
@@ -76,23 +71,22 @@ export default function Footer() {
 
             {/* Column 3: All Pages */}
             <div className="md:col-span-2">
-              <h4 className="text-m font-bold text-white mb-4 tracking-tight">
+              <h4 className="text-sm font-bold text-white mb-4 tracking-tight">
                 All Pages
               </h4>
-              <ul className="space-y-3 text-m sm:text-m text-zinc-400 font-normal">
+              <ul className="space-y-3 text-sm text-zinc-400 font-normal">
                 <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><a href="#free-trial" className="hover:text-white transition-colors">Waitlist</a></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                 <li><a href="#blogs" className="hover:text-white transition-colors">Blogs</a></li>
                 <li><a href="#changelog" className="hover:text-white transition-colors">Changelog</a></li>
                 <li><a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              
               </ul>
             </div>
 
             {/* Column 4: Social Handles */}
             <div className="md:col-span-2">
-              <h4 className="text-m font-bold text-white mb-4 tracking-tight">
+              <h4 className="text-sm font-bold text-white mb-4 tracking-tight">
                 Social Handles
               </h4>
               <div className="flex items-center gap-2.5">
@@ -134,14 +128,12 @@ export default function Footer() {
 
           {/* Bottom Divider Line & Copyright Row */}
           <div className="border-t border-white/10 pt-6 mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 font-normal gap-4 relative z-10">
-            <div className=" text-lg hover:text-white transition-colors">
+            <div className="text-xs sm:text-sm hover:text-white transition-colors">
               © 2024 All rights reserved.
             </div>
 
-            
-
             <div>
-              <a href="#privacy" className=" text-lg hover:text-white transition-colors">
+              <a href="#privacy" className="text-xs sm:text-sm hover:text-white transition-colors">
                 Privacy Policy
               </a>
             </div>

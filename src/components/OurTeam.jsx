@@ -64,10 +64,10 @@ export default function OurTeam() {
 
           {/* Main Title */}
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-4xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white font-tight"
           >
             Our Team Members
@@ -79,11 +79,12 @@ export default function OurTeam() {
           {teamMembers.map((member, idx) => (
             <motion.div
               key={member.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-[#050505] border border-white/10 rounded-2xl overflow-hidden group hover:border-white/25 transition-all shadow-2xl flex flex-col justify-between"
+              initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="bg-[#050505] border border-white/10 rounded-2xl overflow-hidden group hover:border-white/25 transition-colors shadow-2xl flex flex-col justify-between cursor-pointer"
             >
               {/* Image Container with Dotted Mesh Backdrop */}
               <div className="h-72 bg-black relative overflow-hidden flex items-end justify-center">
@@ -108,7 +109,7 @@ export default function OurTeam() {
               {/* Bottom Info Bar */}
               <div className="bg-[#09090b] border-t border-white/5 px-5 py-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug">
                     {member.name}
                   </h3>
                   <p className="text-xs text-zinc-400 font-normal mt-0.5">

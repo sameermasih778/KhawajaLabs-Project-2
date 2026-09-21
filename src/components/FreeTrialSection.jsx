@@ -56,12 +56,12 @@ export default function FreeTrialSection() {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 font-tight leading-[1.15] relative z-10">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-4 font-tight leading-[1.15] relative z-10">
             Start your 7-day free trial
           </h2>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-base text-zinc-400 max-w-lg mx-auto mb-8 font-normal leading-relaxed relative z-10">
+          <p className="text-base sm:text-lg text-zinc-400 max-w-lg mx-auto mb-8 font-normal leading-relaxed relative z-10">
             Start your free trial now to experience seamless project management without any commitment!
           </p>
 

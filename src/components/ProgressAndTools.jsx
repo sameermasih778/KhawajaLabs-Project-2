@@ -53,7 +53,7 @@ export default function ProgressAndTools() {
             </div>
 
             {/* Headline */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-5 font-tight leading-[1.1]">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-5 font-tight leading-[1.1]">
               Monitor Progress <br />
               Faster Than Ever.
             </h2>
@@ -315,7 +315,7 @@ export default function ProgressAndTools() {
             </div>
 
             {/* Headline */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 font-tight leading-[1.1]">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 font-tight leading-[1.1]">
               Powerful Task <br />
               Management Tools
             </h2>
@@ -323,7 +323,7 @@ export default function ProgressAndTools() {
             {/* Checklist */}
             <ul className="space-y-4">
               {checklist.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+                <li key={idx} className="flex items-start gap-3 text-base sm:text-lg text-zinc-300 leading-relaxed font-normal">
                   <div className="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 mt-0.5 flex-shrink-0">
                     <Check className="w-3.5 h-3.5 text-emerald-400" />
                   </div>

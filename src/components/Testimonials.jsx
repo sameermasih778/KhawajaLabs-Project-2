@@ -53,7 +53,7 @@ export default function Testimonials() {
                     <Star key={i} className="w-4 h-4 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-sm sm:text-base text-grey-5 mb-8 leading-relaxed italic">
+                <p className="text-base sm:text-lg text-grey-5 mb-8 leading-relaxed italic">
                   "{rev.content}"
                 </p>
               </div>

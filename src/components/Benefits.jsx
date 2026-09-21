@@ -138,21 +138,21 @@ export default function Benefits() {
 
           {/* Main Title */}
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-5 font-tight leading-[1.15]"
+            initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-5 font-tight leading-[1.15]"
           >
             Unlock Your Team's Potential
           </motion.h2>
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-base sm:text-lg text-zinc-400 leading-relaxed font-normal max-w-2xl mx-auto"
           >
             Maximize efficiency, enhance collaboration, and achieve project goals with Suprema's powerful management tools.
@@ -160,15 +160,16 @@ export default function Benefits() {
         </div>
 
         {/* 3x2 Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-24">
           {cards.map((card, idx) => (
             <motion.div
               key={card.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="bg-[#050505] border border-white/10 rounded-3xl p-8 lg:p-10 relative overflow-hidden group flex flex-col items-center text-center shadow-2xl hover:border-white/30 hover:bg-[#08080a] transition-all min-h-[350px] justify-between"
+              initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="bg-[#050505] border border-white/10 rounded-3xl p-8 lg:p-10 relative overflow-hidden group flex flex-col items-center text-center shadow-2xl hover:border-white/30 hover:bg-[#08080a] transition-colors min-h-[350px] justify-between cursor-pointer"
             >
               {/* Top Accent Light Notch Line */}
               <div className="w-10 h-[2.5px] bg-white/80 rounded-full mx-auto relative z-10" />
@@ -197,7 +198,7 @@ export default function Benefits() {
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
                   {card.title}
                 </h3>
-                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal max-w-xs mx-auto">
+                <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-normal max-w-xs mx-auto">
                   {card.description}
                 </p>
               </div>
@@ -216,10 +217,10 @@ export default function Benefits() {
         >
           {stats.map((stat, idx) => (
             <div key={idx} className="flex items-baseline justify-center gap-3">
-              <span className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight font-tight">
+              <span className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight font-tight">
                 {stat.number}
               </span>
-              <span className="text-sm sm:text-base font-semibold text-zinc-400">
+              <span className="text-base sm:text-lg font-semibold text-zinc-400">
                 {stat.label}
               </span>
             </div>

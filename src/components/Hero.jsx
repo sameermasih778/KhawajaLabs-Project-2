@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Info, Zap, Command, Layers, SlidersHorizontal } from 'lucide-react';
 import LogoStrip from './LogoStrip';
+import logoImg from '../assets/logo.png';
+import smallLogo from '../assets/small logo.svg';
 
 export default function Hero() {
   return (
@@ -32,9 +34,10 @@ export default function Hero() {
           {/* Top Left Card: Keyboard-first design */}
           <motion.div
             initial={{ opacity: 0, x: -50, y: -20 }}
-            animate={{ opacity: 0.85, x: 0, y: 0 }}
+            animate={{ opacity: 0.75, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:block absolute left-0 top-0 w-64 bg-zinc-950/80 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            className="hidden lg:block absolute left-[2%] xl:left-[5%] top-[5%] w-56 bg-zinc-950/80 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            style={{ transform: 'rotate(-3deg)' }}
           >
             <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center text-zinc-400">
@@ -52,9 +55,10 @@ export default function Hero() {
           {/* Middle Left Card: Activity Feed */}
           <motion.div
             initial={{ opacity: 0, x: -60, y: 20 }}
-            animate={{ opacity: 0.8, x: 0, y: 0 }}
+            animate={{ opacity: 0.7, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden xl:block absolute -left-12 top-40 w-80 bg-zinc-950/80 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            className="hidden xl:block absolute -left-[6%] top-[32%] w-72 bg-zinc-950/80 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            style={{ transform: 'rotate(-2deg)' }}
           >
             <div className="text-[11px] font-semibold text-zinc-400 mb-3 uppercase tracking-wider">Activity</div>
             <div className="space-y-2 text-xs">
@@ -80,9 +84,10 @@ export default function Hero() {
           {/* Bottom Left Card: Productivity Reports Radial Gauges */}
           <motion.div
             initial={{ opacity: 0, x: -40, y: 50 }}
-            animate={{ opacity: 0.9, x: 0, y: 0 }}
+            animate={{ opacity: 0.8, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="hidden md:block absolute left-4 bottom-2 w-80 bg-zinc-950/90 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            className="hidden md:block absolute left-[1%] xl:-left-[3%] bottom-[5%] w-72 bg-zinc-950/90 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            style={{ transform: 'rotate(-1deg)' }}
           >
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-bold text-white">Productivity Reports</span>
@@ -126,9 +131,10 @@ export default function Hero() {
           {/* Top Right Card: My Workspace Sidebar Mockup */}
           <motion.div
             initial={{ opacity: 0, x: 50, y: -20 }}
-            animate={{ opacity: 0.85, x: 0, y: 0 }}
+            animate={{ opacity: 0.75, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block absolute right-8 top-0 w-60 bg-zinc-950/80 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            className="hidden lg:block absolute right-[2%] xl:right-[5%] top-[2%] w-56 bg-zinc-950/80 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            style={{ transform: 'rotate(2deg)' }}
           >
             <div className="flex items-center justify-between pb-3 border-b border-white/5 mb-3">
               <div className="flex items-center gap-2 text-xs font-semibold text-white">
@@ -146,15 +152,19 @@ export default function Hero() {
               <div className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-zinc-900/50">
                 <Layers className="w-3.5 h-3.5" /> Projects
               </div>
+              <div className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-zinc-900/50">
+                <SlidersHorizontal className="w-3.5 h-3.5" /> Views
+              </div>
             </div>
           </motion.div>
 
-          {/* Middle Right Card: Instantly Fast */}
+          {/* Middle Right Card: Lightning + Instantly Fast */}
           <motion.div
             initial={{ opacity: 0, x: 60, y: 20 }}
-            animate={{ opacity: 0.9, x: 0, y: 0 }}
+            animate={{ opacity: 0.8, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="hidden md:block absolute right-12 top-36 w-64 bg-zinc-950/90 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            className="hidden md:block absolute right-[3%] xl:right-[1%] top-[42%] w-56 bg-zinc-950/90 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            style={{ transform: 'rotate(1deg)' }}
           >
             <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center text-white mb-2 shadow-md">
               <Zap className="w-4 h-4 fill-white text-white" />
@@ -167,12 +177,25 @@ export default function Hero() {
             </p>
           </motion.div>
 
+          {/* Far Right Card: Keyboard-first design (duplicate) */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 0.6, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+            className="hidden xl:block absolute -right-[5%] top-[50%] w-52 bg-zinc-950/70 border border-white/10 rounded-2xl p-3 shadow-2xl backdrop-blur-md"
+            style={{ transform: 'rotate(3deg)' }}
+          >
+            <h4 className="text-xs font-bold text-white mb-1">Keyboard-first design</h4>
+            <p className="text-[10px] text-zinc-400">Shortcuts for everything - no mouse required</p>
+          </motion.div>
+
           {/* Bottom Right Card: Productivity Reports Line Chart */}
           <motion.div
             initial={{ opacity: 0, x: 40, y: 50 }}
-            animate={{ opacity: 0.85, x: 0, y: 0 }}
+            animate={{ opacity: 0.8, x: 0, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="hidden lg:block absolute right-4 bottom-2 w-80 bg-zinc-950/90 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            className="hidden lg:block absolute right-[3%] xl:right-[1%] bottom-[5%] w-72 bg-zinc-950/90 border border-white/10 rounded-2xl p-4 shadow-2xl backdrop-blur-md"
+            style={{ transform: 'rotate(1deg)' }}
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-bold text-white">Productivity Reports</span>
@@ -205,27 +228,28 @@ export default function Hero() {
 
           {/* ==================== CENTER HERO CONTENT ==================== */}
 
-          <div className="text-center max-w-2xl mx-auto z-20 py-4">
+          <div className="text-center max-w-2xl mx-auto z-20 relative -top-6 md:-top-10">
             {/* Top Badge Pill */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-zinc-900/90 border border-white/15 text-xs font-medium text-white mb-6 hover:border-white/30 transition-all cursor-pointer shadow-lg backdrop-blur-md"
+              initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+              whileHover={{ scale: 1.05 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-white/15 text-xs font-medium text-white mb-8 hover:border-white/30 transition-all cursor-pointer shadow-lg backdrop-blur-md"
             >
-              <div className="w-3.5 h-3.5 rounded-full bg-white relative overflow-hidden flex-shrink-0">
-                <div className="w-2.5 h-2.5 rounded-full bg-black absolute -top-0.5 -right-0.5" />
+              <div className="flex items-center justify-center relative overflow-hidden flex-shrink-0">
+                <img src={smallLogo} alt="Suprema Logo" className="h-6 w-6 object-contain " />
               </div>
-              <span>Manage projects end-to-end</span>
+              <span className="text-base sm:text-base md:text-lg">Manage projects end-to-end</span>
               <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
             </motion.div>
 
             {/* Main Headline */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-5 leading-[1.1] font-tight"
+              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1] font-tight"
             >
               Plan and navigate <br />
               from idea to launch.
@@ -233,25 +257,29 @@ export default function Hero() {
 
             {/* Subtitle */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-sm sm:text-base text-zinc-400 max-w-lg mx-auto mb-7 leading-relaxed font-normal"
+              initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, delay: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="text-base sm:text-lg text-zinc-400 max-w-lg mx-auto mb-8 leading-relaxed font-normal"
             >
               Create a clear roadmap, track progress, and smoothly guide your project from idea to successful launch.
             </motion.p>
 
             {/* CTA Button */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="flex flex-col items-center gap-2.5"
             >
               <a href="#pricing">
-                <button className="px-7 py-3 text-sm font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-xl shadow-white/10 active:scale-95 cursor-pointer">
+                <motion.button
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="px-7 py-3 text-sm font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-xl shadow-white/10 cursor-pointer"
+                >
                   Get Started For Free
-                </button>
+                </motion.button>
               </a>
 
               <div className="flex items-center gap-1.5 text-[11px] text-zinc-400 font-medium pt-0.5">
@@ -260,6 +288,7 @@ export default function Hero() {
               </div>
             </motion.div>
           </div>
+
 
         </div>
 

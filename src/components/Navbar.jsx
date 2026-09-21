@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
   const location = useLocation();
@@ -17,25 +18,18 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-4 md:pt-6 px-3 sm:px-4 flex justify-center pointer-events-none">
-      <div className="pointer-events-auto max-w-5xl w-full bg-black/95 border border-white/10 rounded-2xl p-2 sm:p-2.5 backdrop-blur-xl shadow-2xl flex flex-col transition-all">
+      <div className="pointer-events-auto max-w-5xl w-full bg-black/95 border border-white/10 rounded-2xl p-3 sm:p-4 backdrop-blur-xl shadow-2xl flex flex-col transition-all">
         
         <div className="flex items-center justify-between w-full">
           {/* Left: Brand Logo */}
           <Link to="/" className="flex items-center gap-2 pl-2 sm:pl-3 group">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative overflow-hidden group-hover:scale-105 transition-transform">
-              {/* Suprema Moon / Crescent icon */}
-              <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white relative">
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-black absolute -top-0.5 -right-0.5" />
-              </div>
-            </div>
-            <div className="flex items-baseline gap-1">
-              <span className="text-base sm:text-lg font-bold tracking-tight text-white font-tight">Suprema</span>
-              <span className="text-[10px] font-semibold text-zinc-400 uppercase">UI</span>
+            <div className="flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform">
+              <img src={logoImg} alt="Suprema Logo" className="h-12 sm:h-12 w-auto object-contain" />
             </div>
           </Link>
 
           {/* Center: Segmented Navigation Pills (Desktop) */}
-          <nav className="hidden md:flex items-center bg-zinc-900/90 border border-white/10 rounded-xl p-1.5">
+          <nav className="hidden md:flex items-center bg-zinc-900/90 border border-white/10 rounded-xl p-2">
             {navItems.map((item) => {
               const isActive = location.pathname === item.href || (item.name === 'Home' && location.pathname === '/');
               
@@ -44,7 +38,7 @@ export default function Navbar() {
                   key={item.name}
                   to={item.href}
                   onClick={() => setActiveTab(item.name)}
-                  className={`relative px-4 lg:px-5 py-1.5 text-sm font-medium transition-all rounded-lg ${
+                  className={`relative px-5 lg:px-6 py-2 text-base font-medium transition-all rounded-lg ${
                     isActive ? 'text-white' : 'text-zinc-400 hover:text-white'
                   }`}
                 >
@@ -62,7 +56,7 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setActiveTab(item.name)}
-                  className={`relative px-4 lg:px-5 py-1.5 text-sm font-medium transition-all rounded-lg ${
+                  className={`relative px-5 lg:px-6 py-2 text-base font-medium transition-all rounded-lg ${
                     activeTab === item.name ? 'text-white' : 'text-zinc-400 hover:text-white'
                   }`}
                 >
@@ -82,7 +76,7 @@ export default function Navbar() {
           {/* Right: Contact Us Button & Mobile Hamburger Toggle */}
           <div className="flex items-center gap-2">
             <Link to="/contact">
-              <button className="px-4 py-2 sm:px-6 sm:py-2.5 text-sm sm:text-base font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-lg active:scale-95 cursor-pointer whitespace-nowrap">
+              <button className="px-5 py-2.5 sm:px-7 sm:py-3 text-base sm:text-lg font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-lg active:scale-95 cursor-pointer whitespace-nowrap">
                 Contact us
               </button>
             </Link>

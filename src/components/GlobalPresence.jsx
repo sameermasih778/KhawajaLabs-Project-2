@@ -76,7 +76,7 @@ export default function GlobalPresence() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 font-tight max-w-3xl mx-auto pt-4"
+          className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-4 font-tight max-w-3xl mx-auto pt-4"
         >
           Connecting Worldwide Teams
         </motion.h2>
@@ -87,7 +87,7 @@ export default function GlobalPresence() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal max-w-xl mx-auto mb-20"
+          className="text-base sm:text-lg text-zinc-400 leading-relaxed font-normal max-w-xl mx-auto mb-20"
         >
           Empowering teams across the globe to collaborate seamlessly, driving innovation and success everywhere.
         </motion.p>
@@ -102,7 +102,7 @@ export default function GlobalPresence() {
         >
           {stats.map((stat, idx) => (
             <div key={idx} className="py-6 md:py-0 md:px-8 text-center space-y-2">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight font-tight">
+              <div className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight font-tight">
                 {stat.number}
               </div>
               <div className="text-xs sm:text-sm font-medium text-zinc-400 max-w-xs mx-auto">

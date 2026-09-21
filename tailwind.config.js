@@ -23,7 +23,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Instrument Sans', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
         tight: ['Inter Tight', 'sans-serif'],
         rethink: ['Rethink Sans', 'sans-serif'],
       },

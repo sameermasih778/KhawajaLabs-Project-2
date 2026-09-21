@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, ChevronRight } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function BlogsSection() {
   const blogs = [
@@ -62,7 +63,7 @@ export default function BlogsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white font-tight"
+            className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white font-tight"
           >
             News, insights and more
           </motion.h2>
@@ -96,10 +97,8 @@ export default function BlogsSection() {
                   />
 
                   {/* Center Shield Badge Icon with Suprema Moon */}
-                  <div className="w-12 h-12 rounded-2xl bg-zinc-900/90 border border-white/20 flex items-center justify-center text-white mb-4 shadow-xl backdrop-blur-md relative z-10 group-hover:scale-110 transition-transform">
-                    <div className="w-5 h-5 rounded-full bg-white relative">
-                      <div className="w-3 h-3 rounded-full bg-black absolute -top-0.5 -right-0.5" />
-                    </div>
+                  <div className="flex items-center justify-center text-white mb-4 relative z-10 group-hover:scale-110 transition-transform">
+                    <img src={logoImg} alt="Suprema Logo" className="h-12 w-auto object-contain" />
                   </div>
 
                   {/* Overlay Banner Title */}

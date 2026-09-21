@@ -119,7 +119,7 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 font-tight"
+            className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-4 font-tight"
           >
             Affordable Pricing Plans
           </motion.h2>

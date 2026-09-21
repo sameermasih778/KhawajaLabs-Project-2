@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Search, Inbox, Layers, CheckCircle2, Circle, Clock, XCircle, Plus, ChevronDown, ChevronRight, Edit3, Signal, User } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function ProductOverview() {
   const inProgressTasks = [
@@ -46,20 +47,17 @@ export default function ProductOverview() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-16 h-16 rounded-full bg-gradient-to-b from-zinc-800 to-zinc-950 border border-white/20 flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-white/5 relative"
+            className="flex items-center justify-center mx-auto mb-6 relative"
           >
-            <div className="w-8 h-8 rounded-full bg-white relative overflow-hidden shadow-inner">
-              <div className="w-6 h-6 rounded-full bg-black absolute -top-1 -right-1" />
-            </div>
-            <div className="absolute inset-0 rounded-full bg-white/5 blur-md" />
+            <img src={logoImg} alt="Suprema Logo" className="h-16 w-auto object-contain" />
           </motion.div>
 
           {/* Product Overview Tag */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{ opacity: 0, y: 15, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-400 mb-4"
           >
             <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
@@ -68,21 +66,21 @@ export default function ProductOverview() {
 
           {/* Headline */}
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-5 font-tight"
+            initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-5 font-tight"
           >
             Suprema at a Glance
           </motion.h2>
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-base sm:text-lg text-zinc-400 leading-relaxed font-normal"
           >
             Explore Suprema's powerful features designed to streamline project management, enhance collaboration, and boost efficiency.
@@ -110,10 +108,8 @@ export default function ProductOverview() {
                 {/* Workspace Header */}
                 <div className="flex items-center justify-between text-white font-semibold pb-1">
                   <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-zinc-800 border border-white/20 flex items-center justify-center relative overflow-hidden">
-                      <div className="w-2.5 h-2.5 rounded-full bg-white relative">
-                        <div className="w-2 h-2 rounded-full bg-black absolute -top-0.5 -right-0.5" />
-                      </div>
+                    <div className="flex items-center justify-center relative overflow-hidden">
+                      <img src={logoImg} alt="Suprema Logo" className="h-5 w-auto object-contain" />
                     </div>
                     <span className="font-bold text-sm">Suprema</span>
                     <ChevronDown className="w-3.5 h-3.5 text-zinc-500" />

@@ -20,7 +20,7 @@ export default function CTA() {
             <Sparkles className="w-3.5 h-3.5 text-white" /> Ready for faster launches?
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+          <h2 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
             Start building your roadmap <br />
             with Suprema today.
           </h2>

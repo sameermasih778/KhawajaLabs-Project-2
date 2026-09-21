@@ -84,7 +84,7 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white font-tight"
+            className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white font-tight"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -110,7 +110,7 @@ export default function FAQSection() {
                   className="bg-[#09090b] border border-white/10 rounded-2xl p-4 sm:p-5 cursor-pointer hover:border-white/20 transition-all shadow-lg"
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-sm sm:text-base font-semibold text-white tracking-tight">
+                    <span className="text-base sm:text-lg font-semibold text-white tracking-tight">
                       {item.q}
                     </span>
                     <button className="w-8 h-8 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white transition-colors flex-shrink-0">
@@ -155,7 +155,7 @@ export default function FAQSection() {
                   className="bg-[#09090b] border border-white/10 rounded-2xl p-4 sm:p-5 cursor-pointer hover:border-white/20 transition-all shadow-lg"
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-sm sm:text-base font-semibold text-white tracking-tight">
+                    <span className="text-base sm:text-lg font-semibold text-white tracking-tight">
                       {item.q}
                     </span>
                     <button className="w-8 h-8 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-white transition-colors flex-shrink-0">
