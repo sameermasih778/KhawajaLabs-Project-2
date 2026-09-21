@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Search, Inbox, Layers, CheckCircle2, Circle, Clock, XCircle, Plus, ChevronDown, ChevronRight, Edit3, Signal, User } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/small logo.svg';
 
 export default function ProductOverview() {
   const inProgressTasks = [
