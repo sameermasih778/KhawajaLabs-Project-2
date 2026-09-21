@@ -86,7 +86,7 @@ export default function Footer() {
                 <li><a href="#blogs" className="hover:text-white transition-colors">Blogs</a></li>
                 <li><a href="#changelog" className="hover:text-white transition-colors">Changelog</a></li>
                 <li><a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#404" className="hover:text-white transition-colors">404</a></li>
+              
               </ul>
             </div>
 
