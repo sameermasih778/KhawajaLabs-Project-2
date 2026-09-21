@@ -14,14 +14,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pt-5 px-4 flex justify-center pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 pt-6 px-4 flex justify-center pointer-events-none">
       <div className="pointer-events-auto max-w-5xl w-full bg-black/90 border border-white/10 rounded-2xl p-2 sm:p-2.5 backdrop-blur-xl shadow-2xl flex items-center justify-between">
         
         {/* Left: Brand Logo */}
         <Link to="/" className="flex items-center gap-2 pl-3 group">
-          <div className="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative overflow-hidden group-hover:scale-105 transition-transform">
+          <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative overflow-hidden group-hover:scale-105 transition-transform">
             {/* Suprema Moon / Crescent icon matching screenshot */}
-            <div className="w-4 h-4 rounded-full bg-white relative">
+            <div className="w-5 h-5 rounded-full bg-white relative">
               <div className="w-3 h-3 rounded-full bg-black absolute -top-0.5 -right-0.5" />
             </div>
           </div>
@@ -32,7 +32,7 @@ export default function Navbar() {
         </Link>
 
         {/* Center: Segmented Navigation Pills */}
-        <nav className="hidden md:flex items-center bg-zinc-900/90 border border-white/10 rounded-xl p-1">
+        <nav className="hidden md:flex items-center bg-zinc-900/90 border border-white/10 rounded-xl p-2">
           {navItems.map((item) => {
             const isActive = location.pathname === item.href || (item.name === 'Home' && location.pathname === '/');
             
@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* Right: Contact Us Button */}
         <div className="flex items-center">
           <Link to="/contact">
-            <button className="px-5 py-2 text-sm font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-lg active:scale-95 cursor-pointer">
+            <button className="px-6 py-3 text-lg font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-lg active:scale-95 cursor-pointer">
               Contact us
             </button>
           </Link>

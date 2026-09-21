@@ -2,12 +2,15 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ProductOverview from '../components/ProductOverview';
 import FeatureShowcase from '../components/FeatureShowcase';
-import FeatureGrid from '../components/FeatureGrid';
-import HowItWorks from '../components/HowItWorks';
-import Stats from '../components/Stats';
-import Testimonials from '../components/Testimonials';
+import Benefits from '../components/Benefits';
 import Pricing from '../components/Pricing';
-import CTA from '../components/CTA';
+import ProgressAndTools from '../components/ProgressAndTools';
+import BlogsSection from '../components/BlogsSection';
+import OurTeam from '../components/OurTeam';
+import GlobalPresence from '../components/GlobalPresence';
+import TestimonialsSection from '../components/TestimonialsSection';
+import FAQSection from '../components/FAQSection';
+import FreeTrialSection from '../components/FreeTrialSection';
 
 export default function Home() {
   return (
@@ -15,12 +18,22 @@ export default function Home() {
       <Hero />
       <ProductOverview />
       <FeatureShowcase />
-      <FeatureGrid />
-      <HowItWorks />
-      <Stats />
-      <Testimonials />
+      <Benefits />
       <Pricing />
-      <CTA />
+      <ProgressAndTools />
+      <BlogsSection />
+      <OurTeam />
+      <GlobalPresence />
+      <TestimonialsSection />
+      <FAQSection />
+      <FreeTrialSection />
     </main>
   );
 }
+
+
+
+
+
+
+

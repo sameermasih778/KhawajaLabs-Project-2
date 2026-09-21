@@ -1,147 +1,277 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Sparkles } from 'lucide-react';
-import SectionHeading from './SectionHeading';
-import Button from './Button';
+import { 
+  CheckCircle2, 
+  Crown, 
+  Info, 
+  Users, 
+  Smartphone, 
+  ShieldCheck, 
+  Clock, 
+  Cloud, 
+  Star,
+  Lock,
+  Zap
+} from 'lucide-react';
 
 export default function Pricing() {
-  const [annual, setAnnual] = useState(true);
+  const [billedYearly, setBilledYearly] = useState(true);
 
   const plans = [
     {
-      name: 'Starter',
-      priceMonthly: '$0',
-      priceAnnual: '$0',
-      description: 'Perfect for small side projects and individual builders looking to get organized.',
+      id: 'free',
+      name: 'Free Plan',
+      price: '$0',
+      period: 'per user / month',
+      subtext: 'Free for everyone',
       popular: false,
+      hasToggle: false,
+      btnVariant: 'dark',
+      btnText: 'Get Started',
       features: [
-        'Up to 5 team members',
-        'Basic Kanban & List boards',
-        '100 AI task assignment actions/mo',
-        'Community support',
-        'GitHub integration',
+        { name: 'Task Management', included: true },
+        { name: 'Data Encryption', included: true },
+        { name: 'Deadline Alerts', included: true },
+        { name: 'Collaboration Tools', included: false },
+        { name: 'Task Management', included: false },
+        { name: 'Custom Workflows', included: false },
+        { name: 'Real-Time Sync', included: false },
       ],
-      cta: 'Start Free',
-      variant: 'outline',
     },
     {
-      name: 'Pro',
-      priceMonthly: '$29',
-      priceAnnual: '$24',
-      description: 'Ideal for growing product teams demanding AI automation and live velocity tracking.',
+      id: 'pro',
+      name: 'Pro Plan',
+      price: '$12',
+      period: 'per user / month',
+      popularBadge: 'Most Popular',
       popular: true,
+      hasToggle: true,
+      btnVariant: 'white',
+      btnText: 'Get Started',
       features: [
-        'Unlimited team members',
-        'Unlimited AI task actions',
-        'Real-time SLA deadline alerts',
-        'Workspace Auto-Cleanup',
-        'Priority 24/7 support',
-        'Custom GitHub, Slack, Figma sync',
+        { name: 'Task Management', included: true },
+        { name: 'Data Encryption', included: true },
+        { name: 'Deadline Alerts', included: true },
+        { name: 'Collaboration Tools', included: true },
+        { name: 'Task Management', included: false },
+        { name: 'Custom Workflows', included: false },
+        { name: 'Real-Time Sync', included: false },
       ],
-      cta: 'Get Started Pro',
-      variant: 'primary',
     },
     {
-      name: 'Enterprise',
-      priceMonthly: '$99',
-      priceAnnual: '$79',
-      description: 'For scaled organizations requiring SOC2 security, custom SSO, and dedicated success manager.',
+      id: 'advanced',
+      name: 'Advanced Plan',
+      price: '$19',
+      period: 'per user / month',
       popular: false,
+      hasToggle: true,
+      btnVariant: 'dark',
+      btnText: 'Get Started',
       features: [
-        'Everything in Pro',
-        'Custom AI model training',
-        'SAML SSO & Okta integration',
-        '99.99% Uptime SLA guarantee',
-        'Dedicated Solutions Architect',
-        'Custom contract & invoicing',
+        { name: 'Task Management', included: true },
+        { name: 'Data Encryption', included: true },
+        { name: 'Deadline Alerts', included: true },
+        { name: 'Collaboration Tools', included: true },
+        { name: 'Task Management', included: true },
+        { name: 'Custom Workflows', included: true },
+        { name: 'Real-Time Sync', included: true },
       ],
-      cta: 'Contact Sales',
-      variant: 'outline',
     },
   ];
 
-  return (
-    <section id="pricing" className="py-24 bg-dark-2/40 relative overflow-hidden border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Flexible Pricing"
-          title="Predictable plans for teams of any size"
-          description="Start for free and upgrade as your product team scales. No hidden fees or lock-ins."
-        />
+  const allPlansFeatures = [
+    { icon: Users, label: 'Collaboration Tools' },
+    { icon: Smartphone, label: 'Mobile Access' },
+    { icon: ShieldCheck, label: 'Data Security' },
+    { icon: Clock, label: '24/7 Support' },
+    { icon: Cloud, label: 'Cloud Storage' },
+    { icon: Star, label: 'User Roles' },
+    { icon: Lock, label: 'SOC2 Security' },
+    { icon: Zap, label: 'Automated Workflows' },
+  ];
 
-        {/* Toggle */}
-        <div className="flex items-center justify-center gap-4 mb-16">
-          <span className={`text-sm font-medium ${!annual ? 'text-white' : 'text-grey-4'}`}>
-            Monthly Billing
-          </span>
-          <button
-            onClick={() => setAnnual(!annual)}
-            className="w-14 h-8 rounded-full bg-dark-4 border border-white/10 p-1 flex items-center transition-colors cursor-pointer"
+  return (
+    <section id="pricing" className="py-24 md:py-32 bg-black text-white relative overflow-hidden border-t border-white/10">
+      
+      {/* Background Top Ambient Beam */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-emerald-500/5 rounded-full blur-[160px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          
+          {/* Crown Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 mb-4"
           >
-            <motion.div
-              animate={{ x: annual ? 24 : 0 }}
-              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-              className="w-6 h-6 rounded-full bg-white shadow-md"
-            />
-          </button>
-          <span className={`text-sm font-medium flex items-center gap-1.5 ${annual ? 'text-white' : 'text-grey-4'}`}>
-            Annual Billing
-            <span className="text-[10px] uppercase tracking-wider bg-white/10 text-white border border-white/15 px-2 py-0.5 rounded-full font-bold">
-              Save 20%
-            </span>
-          </span>
+            <Crown className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400" />
+            <span>Pricing</span>
+          </motion.div>
+
+          {/* Title */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 font-tight"
+          >
+            Affordable Pricing Plans
+          </motion.h2>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {/* 3 Pricing Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-20">
           {plans.map((plan, idx) => (
             <motion.div
-              key={idx}
+              key={plan.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`rounded-3xl p-8 flex flex-col justify-between relative ${
+              className={`bg-[#050505] border rounded-3xl p-7 flex flex-col justify-between relative shadow-2xl transition-all ${
                 plan.popular
-                  ? 'bg-dark-3 border-2 border-white/30 shadow-2xl shadow-white/5 scale-105 z-10'
-                  : 'bg-dark-2/70 border border-white/10'
+                  ? 'border-white/20 shadow-white/5 bg-[#08080a]'
+                  : 'border-white/10 hover:border-white/20'
               }`}
             >
-              {plan.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-white text-black text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 fill-black" /> Most Popular
-                </div>
-              )}
+              {/* Subtle Arc Light Reflection Top Right */}
+              <div className="absolute top-0 right-0 w-44 h-44 bg-gradient-to-br from-white/10 to-transparent blur-2xl pointer-events-none rounded-full" />
 
               <div>
-                <div className="text-xl font-bold text-white mb-2">{plan.name}</div>
-                <div className="text-sm text-grey-4 mb-6 min-h-[40px]">{plan.description}</div>
-
-                <div className="flex items-baseline gap-1 mb-8">
-                  <span className="text-4xl font-extrabold text-white font-tight">
-                    {annual ? plan.priceAnnual : plan.priceMonthly}
-                  </span>
-                  <span className="text-sm text-grey-4">/ user / mo</span>
+                {/* Header Row: Title & Optional Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-bold text-white tracking-tight">
+                    {plan.name}
+                  </h3>
+                  {plan.popularBadge && (
+                    <span className="text-[11px] font-semibold text-zinc-300 bg-zinc-900 border border-white/15 px-2.5 py-0.5 rounded-full">
+                      {plan.popularBadge}
+                    </span>
+                  )}
                 </div>
 
-                <ul className="space-y-3.5 mb-8">
-                  {plan.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-3 text-sm text-grey-5">
-                      <div className="w-4 h-4 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-white" />
-                      </div>
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Price Display */}
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-tight">
+                    {plan.price}
+                  </span>
+                  <span className="text-xs text-zinc-400 font-medium">
+                    {plan.period}
+                  </span>
+                </div>
+
+                {/* Subtext or Yearly Toggle */}
+                <div className="mb-6 h-8 flex items-center">
+                  {plan.hasToggle ? (
+                    <div className="flex items-center gap-2 text-xs font-medium text-zinc-400">
+                      <button
+                        onClick={() => setBilledYearly(!billedYearly)}
+                        className={`w-9 h-5 rounded-full p-0.5 flex items-center transition-colors ${
+                          billedYearly ? 'bg-zinc-700' : 'bg-zinc-900 border border-white/10'
+                        }`}
+                      >
+                        <div
+                          className={`w-4 h-4 rounded-full bg-white shadow-md transform transition-transform ${
+                            billedYearly ? 'translate-x-4' : 'translate-x-0'
+                          }`}
+                        />
+                      </button>
+                      <span>Billed yearly</span>
+                    </div>
+                  ) : (
+                    <span className="text-xs text-zinc-400">{plan.subtext}</span>
+                  )}
+                </div>
+
+                {/* CTA Button */}
+                <button
+                  className={`w-full py-3 px-4 rounded-xl text-sm font-bold transition-all shadow-lg active:scale-95 cursor-pointer mb-3 ${
+                    plan.btnVariant === 'white'
+                      ? 'bg-white text-black hover:bg-zinc-200 shadow-white/10'
+                      : 'bg-zinc-900 text-white border border-white/15 hover:bg-zinc-800'
+                  }`}
+                >
+                  {plan.btnText}
+                </button>
+
+                {/* 7-Day Trial Disclaimer */}
+                <div className="flex items-center justify-center gap-1.5 text-xs text-zinc-400 mb-8 font-normal">
+                  <Info className="w-3.5 h-3.5 text-zinc-500" />
+                  <span>Get your free 7-day trial today!</span>
+                </div>
+
+                {/* Features List Section */}
+                <div className="border-t border-white/5 pt-6">
+                  <h4 className="text-xs font-bold text-white mb-4 uppercase tracking-wider">
+                    What's Included
+                  </h4>
+
+                  <ul className="space-y-3">
+                    {plan.features.map((feat, fIdx) => (
+                      <li key={fIdx} className="flex items-center gap-3 text-xs font-medium">
+                        {feat.included ? (
+                          <div className="w-4 h-4 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                          </div>
+                        ) : (
+                          <div className="w-4 h-4 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-zinc-600 flex-shrink-0">
+                            <CheckCircle2 className="w-3 h-3 text-zinc-600" />
+                          </div>
+                        )}
+                        <span className={feat.included ? 'text-zinc-200' : 'text-zinc-600'}>
+                          {feat.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
               </div>
 
-              <Button variant={plan.variant} size="lg" className="w-full">
-                {plan.cta}
-              </Button>
             </motion.div>
           ))}
         </div>
+
+
+        {/* ==================== ALL PLANS INCLUDE SECTION (Screenshot 2) ==================== */}
+        <div className="pt-8">
+          
+          {/* Header Line Divider with Side Accent Dots */}
+          <div className="flex items-center justify-center gap-4 text-xs font-bold text-white mb-10">
+            <div className="h-[1px] w-24 sm:w-36 md:w-48 bg-gradient-to-r from-transparent via-white/30 to-white/60 relative">
+              <div className="w-1.5 h-1.5 rounded-full bg-white absolute right-0 -top-[2px]" />
+            </div>
+            <span className="tracking-wide">All Plans Include</span>
+            <div className="h-[1px] w-24 sm:w-36 md:w-48 bg-gradient-to-l from-transparent via-white/30 to-white/60 relative">
+              <div className="w-1.5 h-1.5 rounded-full bg-white absolute left-0 -top-[2px]" />
+            </div>
+          </div>
+
+          {/* Continuous Smooth Horizontal Marquee Ticker Bar */}
+          <div className="relative overflow-hidden w-full py-4 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+            <div className="flex items-center gap-8 w-max animate-marquee">
+              {[...allPlansFeatures, ...allPlansFeatures, ...allPlansFeatures].map((item, idx) => {
+                const IconComp = item.icon;
+
+                return (
+                  <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-zinc-400 whitespace-nowrap">
+                    <IconComp className="w-4 h-4 text-zinc-300" />
+                    <span className="text-zinc-300">{item.label}</span>
+                    <span className="text-zinc-600 ml-5">•</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

@@ -1,90 +1,156 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckSquare, Globe, MessageSquare, Share2, Shield } from 'lucide-react';
+import { Mail, ChevronRight } from 'lucide-react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-dark-1 border-t border-white/10 pt-16 pb-12 text-grey-4 text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-white/5">
-          {/* Col 1: Brand */}
-          <div className="md:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-black font-bold">
-                <CheckSquare className="w-4 h-4 stroke-[2.5]" />
+    <footer className="bg-black text-white relative pt-16 pb-12 overflow-hidden border-t border-black/80 font-sans">
+      
+      {/* Main Footer Container Box */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Frame Container with Side Accents */}
+        <div className="bg-[#050505] border border-white/10 rounded-3xl p-8 sm:p-12 md:p-14 shadow-2xl relative overflow-hidden">
+          
+          {/* Side Curved/Glow Panels */}
+          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black/5 via-black/[0.02] to-transparent border-r border-black/5 pointer-events-none" />
+          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-black/5 via-black/[0.02] to-transparent border-l border-black/5 pointer-events-none" />
+
+          {/* 4 Column Main Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-start relative z-10">
+            
+            {/* Column 1: Brand Info */}
+            <div className="md:col-span-5 space-y-4">
+              {/* Suprema Logo */}
+              <Link to="/" className="flex items-center gap-2 group inline-flex">
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative overflow-hidden group-hover:scale-105 transition-transform">
+                  <div className="w-3.5 h-3.5 rounded-full bg-white relative">
+                    <div className="w-2 h-2 rounded-full bg-black absolute -top-0.5 -right-0.5" />
+                  </div>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-bold tracking-tight text-white font-tight">Suprema</span>
+                  <span className="text-[10px] font-semibold text-zinc-400 uppercase">UI</span>
+                </div>
+              </Link>
+
+              {/* Tagline */}
+              <p className="text-m text-zinc-400 font-normal leading-relaxed max-w-xs">
+                Plan and navigate from idea to launch.
+              </p>
+
+              {/* Email Link */}
+              <div>
+                <a
+                  href="mailto:hello@suprema.com"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-zinc-400 hover:text-white transition-colors group"
+                >
+                  <Mail className="w-4 h-4 text-zinc-400 group-hover:text-white" />
+                  <span>hello@suprema.com</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-zinc-500 group-hover:translate-x-1 transition-all" />
+                </a>
               </div>
-              <span className="text-lg font-bold text-white tracking-tight">Suprema</span>
-            </Link>
-            <p className="text-sm text-grey-4 max-w-sm leading-relaxed">
-              Create a clear roadmap, track progress in real-time, and smoothly guide your project from idea to successful launch.
-            </p>
-            <div className="flex items-center gap-3 pt-2">
-              <a href="#" className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white transition-colors" aria-label="Website">
-                <Globe className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white transition-colors" aria-label="Community">
-                <MessageSquare className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white transition-colors" aria-label="Share">
-                <Share2 className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white transition-colors" aria-label="Security">
-                <Shield className="w-4 h-4" />
+
+              {/* All Systems Operational Pill */}
+              <div className="pt-2">
+                <div className="inline-flex items-center gap-2 text-m text-zinc-400 font-medium">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" />
+                  <span>All Systems Operational</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 2: Quick Navigation */}
+            <div className="md:col-span-3">
+              <h4 className="text-m font-bold text-white mb-4 tracking-tight">
+                Quick Navigation
+              </h4>
+              <ul className="space-y-3 text-m sm:text-m text-zinc-400 font-normal">
+                <li><a href="#product-overview" className="hover:text-white transition-colors">Product Overview</a></li>
+                <li><a href="#features-showcase" className="hover:text-white transition-colors">Features</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
+                <li><a href="#faq" className="hover:text-white transition-colors">FAQ's</a></li>
+              </ul>
+            </div>
+
+            {/* Column 3: All Pages */}
+            <div className="md:col-span-2">
+              <h4 className="text-m font-bold text-white mb-4 tracking-tight">
+                All Pages
+              </h4>
+              <ul className="space-y-3 text-m sm:text-m text-zinc-400 font-normal">
+                <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
+                <li><a href="#free-trial" className="hover:text-white transition-colors">Waitlist</a></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><a href="#blogs" className="hover:text-white transition-colors">Blogs</a></li>
+                <li><a href="#changelog" className="hover:text-white transition-colors">Changelog</a></li>
+                <li><a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#404" className="hover:text-white transition-colors">404</a></li>
+              </ul>
+            </div>
+
+            {/* Column 4: Social Handles */}
+            <div className="md:col-span-2">
+              <h4 className="text-m font-bold text-white mb-4 tracking-tight">
+                Social Handles
+              </h4>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center text-white text-xs font-bold hover:bg-white hover:text-black transition-all shadow-md"
+                  aria-label="LinkedIn"
+                >
+                  in
+                </a>
+                <a
+                  href="https://x.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center text-white text-xs font-bold hover:bg-white hover:text-black transition-all shadow-md"
+                  aria-label="X"
+                >
+                  𝕏
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-zinc-900 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all shadow-md"
+                  aria-label="Instagram"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Divider Line & Copyright Row */}
+          <div className="border-t border-white/10 pt-6 mt-10 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 font-normal gap-4 relative z-10">
+            <div className=" text-lg hover:text-white transition-colors">
+              © 2024 All rights reserved.
+            </div>
+
+            
+
+            <div>
+              <a href="#privacy" className=" text-lg hover:text-white transition-colors">
+                Privacy Policy
               </a>
             </div>
           </div>
 
-          {/* Col 2: Product */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">Product</h4>
-            <ul className="space-y-2.5">
-              <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#workflow" className="hover:text-white transition-colors">AI Assignment</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Integrations</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Changelog</a></li>
-            </ul>
-          </div>
-
-          {/* Col 3: Company */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">Company</h4>
-            <ul className="space-y-2.5">
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">About Suprema</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Press Kit</a></li>
-            </ul>
-          </div>
-
-          {/* Col 4: Legal */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">Legal</h4>
-            <ul className="space-y-2.5">
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Security Overview</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">GDPR Compliance</a></li>
-            </ul>
-          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-grey-3 gap-4">
-          <div>
-            © {currentYear} Suprema Inc. All rights reserved. Recreated with React & Tailwind CSS.
-          </div>
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              All Systems Operational
-            </span>
-          </div>
-        </div>
       </div>
     </footer>
   );
 }
+
