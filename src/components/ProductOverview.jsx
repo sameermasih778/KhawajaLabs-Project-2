@@ -101,11 +101,11 @@ export default function ProductOverview() {
           <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-b from-white/20 via-white/5 to-transparent blur-md opacity-60" />
 
           {/* Main App Frame Container */}
-          <div className="relative bg-[#09090b] border border-zinc-800/90 rounded-2xl overflow-hidden shadow-2xl font-sans [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)]">
+          <div className="relative bg-[#09090b] border border-zinc-800/90 rounded-2xl overflow-hidden shadow-2xl font-sans [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]">
             <div className="grid grid-cols-1 md:grid-cols-12 min-h-[580px]">
               
               {/* Sidebar (Left) */}
-              <div className="md:col-span-3 bg-[#0c0c0e] border-r border-zinc-800/80 p-4 space-y-5 text-xs text-zinc-400">
+              <div className="hidden md:block md:col-span-3 bg-[#0c0c0e] border-r border-zinc-800/80 p-4 space-y-5 text-xs text-zinc-400">
                 
                 {/* Workspace Header */}
                 <div className="flex items-center justify-between text-white font-semibold pb-1">
@@ -179,8 +179,9 @@ export default function ProductOverview() {
 
               </div>
 
-              {/* Main Task List Area (Right) */}
-              <div className="md:col-span-9 bg-[#09090b] p-6 space-y-5 text-xs">
+              {/* Main Task List Area (Right) - Scrollable on Mobile */}
+              <div className="col-span-12 md:col-span-9 bg-[#09090b] p-4 sm:p-6 space-y-5 text-xs overflow-x-auto">
+
                 
                 {/* Header Bar */}
                 <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3">

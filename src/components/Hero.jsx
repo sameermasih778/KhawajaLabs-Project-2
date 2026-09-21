@@ -5,7 +5,7 @@ import LogoStrip from './LogoStrip';
 
 export default function Hero() {
   return (
-    <section className="relative pt-24 pb-6 md:pt-28 md:pb-8 overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between">
+    <section className="relative pt-28 sm:pt-32 md:pt-36 pb-8 md:pb-12 overflow-hidden bg-black text-white min-h-screen flex flex-col justify-between">
       {/* Background Dot Grid */}
       <div 
         className="absolute inset-0 opacity-20 pointer-events-none"
@@ -24,7 +24,8 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-between">
         
         {/* Floating Cards Canvas Layout */}
-        <div className="relative py-2 min-h-[440px] md:min-h-[480px] flex flex-col items-center justify-center my-auto">
+        <div className="relative py-2 min-h-[380px] sm:min-h-[440px] md:min-h-[480px] flex flex-col items-center justify-center my-auto">
+
 
           {/* ==================== LEFT FLOATING CARDS ==================== */}
 
