@@ -11,7 +11,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', href: '/', isRoute: true },
-    { name: 'Blogs', href: '#blogs', isRoute: false },
+    { name: 'Blogs', href: '/blogs', isRoute: true },
     { name: 'Changelog', href: '#changelog', isRoute: false },
     { name: 'Waitlist', href: '#waitlist', isRoute: false },
   ];
@@ -31,7 +31,10 @@ export default function Navbar() {
           {/* Center: Segmented Navigation Pills (Desktop) */}
           <nav className="hidden md:flex items-center bg-zinc-900/90 border border-white/10 rounded-xl p-2">
             {navItems.map((item) => {
-              const isActive = location.pathname === item.href || (item.name === 'Home' && location.pathname === '/');
+              const isActive =
+                (item.name === 'Home' && location.pathname === '/') ||
+                (item.name === 'Blogs' && (location.pathname.startsWith('/blog') || location.pathname.startsWith('/blogs'))) ||
+                (location.pathname === item.href);
               
               return item.isRoute ? (
                 <Link

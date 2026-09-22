@@ -1,38 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { BookOpen, ChevronRight, ArrowRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
+import { blogPosts } from '../data/blogData';
 
 export default function BlogsSection() {
-  const blogs = [
-    {
-      id: 'workflow-efficiency',
-      bannerTitle: 'Workflow\nEfficiency',
-      category: 'Efficiency',
-      categoryColor: 'text-emerald-400',
-      date: 'Nov 30, 2024',
-      title: 'Enhance Workflow Efficiency with Custom Filters',
-      link: '#',
-    },
-    {
-      id: 'time-management',
-      bannerTitle: 'Mastering Time\nManagement',
-      category: 'Productivity',
-      categoryColor: 'text-amber-400',
-      date: 'Oct 23, 2024',
-      title: 'Mastering Time Management for Maximum Efficiency',
-      link: '#',
-    },
-    {
-      id: 'task-management-tips',
-      bannerTitle: 'Task Management\nTips',
-      category: 'Collaboration',
-      categoryColor: 'text-blue-400',
-      date: 'Oct 22, 2024',
-      title: 'Boost Team Collaboration with Effective Task Management',
-      link: '#',
-    },
-  ];
+  const featured = blogPosts.slice(0, 3);
 
   return (
     <section id="blogs" className="py-24 md:py-32 bg-black text-white relative overflow-hidden border-t border-white/10">
@@ -70,17 +44,17 @@ export default function BlogsSection() {
         </div>
 
         {/* 3 Blog Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blogs.map((blog, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {featured.map((blog, idx) => (
             <motion.article
-              key={blog.id}
+              key={blog.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-[#050505] border border-white/10 rounded-3xl p-5 flex flex-col justify-between group hover:border-white/20 transition-all shadow-2xl cursor-pointer"
+              className="bg-[#050505] border border-white/10 rounded-3xl p-5 flex flex-col justify-between group hover:border-white/20 transition-all shadow-2xl"
             >
-              <div>
+              <Link to={`/blog/${blog.slug}`} className="block">
                 {/* Banner Graphic Card Container */}
                 <div className="h-56 bg-gradient-to-b from-[#161619] via-[#0d0d0f] to-[#070709] rounded-2xl border border-white/10 relative overflow-hidden flex flex-col items-center justify-center text-center p-6 mb-5 group-hover:border-white/20 transition-all shadow-inner">
                   
@@ -122,17 +96,34 @@ export default function BlogsSection() {
                 <h4 className="text-base sm:text-lg font-bold text-white leading-snug mb-4 px-1 group-hover:text-zinc-200 transition-colors">
                   {blog.title}
                 </h4>
-              </div>
+              </Link>
 
               {/* Read Full Blog Link */}
-              <div className="pt-2 px-1">
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-400 group-hover:text-white transition-colors">
-                  Read Full Blog
+              <div className="pt-2 px-1 border-t border-white/5">
+                <Link
+                  to={`/blog/${blog.slug}`}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-400 group-hover:text-white transition-colors"
+                >
+                  <span>Read Full Blog</span>
                   <ChevronRight className="w-3.5 h-3.5 text-zinc-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
-                </span>
+                </Link>
               </div>
             </motion.article>
           ))}
+        </div>
+
+        {/* View All Blogs Button */}
+        <div className="text-center">
+          <Link to="/blogs">
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-zinc-900 border border-white/15 text-sm font-bold text-white hover:border-white/30 hover:bg-zinc-800 transition-all shadow-lg"
+            >
+              <span>View All Blogs</span>
+              <ArrowRight className="w-4 h-4 text-zinc-400" />
+            </motion.button>
+          </Link>
         </div>
 
       </div>
