@@ -12,7 +12,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Home', href: '/', isRoute: true },
     { name: 'Blogs', href: '/blogs', isRoute: true },
-    { name: 'Changelog', href: '#changelog', isRoute: false },
+    { name: 'Changelog', href: '/changelog', isRoute: true },
     { name: 'Waitlist', href: '#waitlist', isRoute: false },
   ];
 
