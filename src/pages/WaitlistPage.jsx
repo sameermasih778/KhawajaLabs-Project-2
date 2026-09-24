@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Sparkles, 
-  ShieldCheck, 
-  Folder, 
-  Users, 
-  Timer, 
-  Tag, 
-  CheckCircle2, 
+import {
+  Sparkles,
+  ShieldCheck,
+  Folder,
+  Users,
+  Timer,
+  Tag,
+  CheckCircle2,
   ArrowRight,
   Zap
 } from 'lucide-react';
@@ -57,9 +57,9 @@ export default function WaitlistPage() {
 
   return (
     <div className="bg-black text-white min-h-screen pt-24 sm:pt-32 md:pt-36 pb-16 overflow-hidden relative font-sans">
-      
+
       {/* Background Dot Grid */}
-      <div 
+      <div
         className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px)`,
@@ -76,7 +76,7 @@ export default function WaitlistPage() {
 
       {/* ==================== 1. HERO WAITLIST HEADER ==================== */}
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 text-center">
-        
+
         {/* Top Suprema Shield Graphic */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)', y: -15 }}
@@ -85,7 +85,7 @@ export default function WaitlistPage() {
           className="relative mx-auto w-16 h-20 sm:w-20 sm:h-24 md:w-24 md:h-28 flex items-center justify-center mb-5 sm:mb-6"
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 sm:w-48 h-36 sm:h-48 bg-white/15 rounded-full blur-2xl pointer-events-none" />
-          <div 
+          <div
             className="absolute -inset-6 sm:-inset-10 opacity-20 pointer-events-none"
             style={{
               backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px)`,
@@ -95,7 +95,7 @@ export default function WaitlistPage() {
             }}
           />
 
-          <motion.div 
+          <motion.div
             animate={{ y: [0, -4, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
             className="absolute inset-0 flex items-center justify-center"
@@ -110,16 +110,16 @@ export default function WaitlistPage() {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
           whileHover={{ scale: 1.04 }}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm font-semibold text-emerald-400 mb-4 sm:mb-5 shadow-sm backdrop-blur-md cursor-default"
+          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm font-semibold text-emerald-400 mb-4 sm:mb-5 shadow-sm backdrop-blur-md cursor-default"
         >
-          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-6 text-emerald-500" />
           <span>Waitlist</span>
         </motion.div>
 
         {/* Main Title */}
         <div className="relative max-w-4xl mx-auto mb-4 sm:mb-6 px-2">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[420px] sm:max-w-[480px] h-[70px] sm:h-[100px] bg-white/[0.08] rounded-full blur-3xl pointer-events-none" />
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
