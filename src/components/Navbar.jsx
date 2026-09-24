@@ -13,7 +13,7 @@ export default function Navbar() {
     { name: 'Home', href: '/', isRoute: true },
     { name: 'Blogs', href: '/blogs', isRoute: true },
     { name: 'Changelog', href: '/changelog', isRoute: true },
-    { name: 'Waitlist', href: '#waitlist', isRoute: false },
+    { name: 'Waitlist', href: '/waitlist', isRoute: true },
   ];
 
   return (

@@ -76,7 +76,7 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3 text-sm text-zinc-400 font-normal">
                 <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-                <li><a href="#free-trial" className="hover:text-white transition-colors">Waitlist</a></li>
+                <li><Link to="/waitlist" className="hover:text-white transition-colors">Waitlist</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                 <li><Link to="/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
                 <li><Link to="/changelog" className="hover:text-white transition-colors">Changelog</Link></li>
