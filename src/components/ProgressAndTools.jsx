@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   BarChart3, 
@@ -86,11 +87,11 @@ export default function ProgressAndTools() {
 
             {/* CTA Button */}
 
-            <a href="/contact">
+            <Link to="/contact">
               <button className="px-7 py-3.5 text-sm font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-xl shadow-white/10 active:scale-95 cursor-pointer">
                 Start your 7 day free trial
               </button>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Right Project Timeline UI Mockup */}
