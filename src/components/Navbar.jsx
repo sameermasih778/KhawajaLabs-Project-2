@@ -78,7 +78,7 @@ export default function Navbar() {
 
           {/* Right: Contact Us Button & Mobile Hamburger Toggle */}
           <div className="flex items-center gap-2">
-            <Link to="/contact">
+            <Link to="/contact" className="hidden md:block">
               <button className="px-5 py-2.5 sm:px-7 sm:py-3 text-base sm:text-lg font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-lg active:scale-95 cursor-pointer whitespace-nowrap">
                 Contact us
               </button>
@@ -133,6 +133,16 @@ export default function Navbar() {
                     </a>
                   )
                 ))}
+                {/* Contact Us inside mobile menu */}
+                <div className="pt-2 mt-1 border-t border-white/10">
+                  <Link
+                    to="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-center px-4 py-3 text-sm font-bold text-black bg-white hover:bg-zinc-200 rounded-lg transition-all active:scale-95"
+                  >
+                    Contact us
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}
