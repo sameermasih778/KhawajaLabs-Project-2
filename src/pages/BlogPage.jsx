@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Search, BookOpen, ChevronRight } from 'lucide-react';
+import { Search, BookOpen, ChevronRight, GraduationCap } from 'lucide-react';
 import { blogPosts, authors } from '../data/blogData';
 import logoImg from '../assets/small logo.svg';
 import smallLogo from '../assets/small logo.svg';
@@ -425,7 +425,7 @@ export default function BlogPage() {
 
 
       {/* ==================== 4. OUR AUTHORS SECTION ==================== */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-24 md:mb-32">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 sm:mb-24 md:mb-32 pt-6">
         
         {/* Horizontal Light Beam at top of section */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
@@ -439,9 +439,9 @@ export default function BlogPage() {
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm font-semibold text-zinc-200 mb-3 sm:mb-4 shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs sm:text-sm font-semibold text-emerald-400 mb-4 sm:mb-5 shadow-sm backdrop-blur-md"
           >
-            <span>🎓</span>
+            <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" />
             <span>Our Authors</span>
           </motion.div>
 

@@ -1,23 +1,14 @@
-import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { 
   Sparkles, 
-  Bell, 
-  Tag, 
-  Zap, 
-  ChevronRight,
-  X 
+  Bell
 } from 'lucide-react';
 import { changelogEntries } from '../data/changelogData';
-import logoImg from '../assets/small logo.svg';
 import smallLogo from '../assets/small logo.svg';
 import FreeTrialSection from '../components/FreeTrialSection';
 
 export default function ChangelogPage() {
-  const [subscribeOpen, setSubscribeOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
   const containerRef = useRef(null);
 
   // Track vertical scroll progress across the timeline section
@@ -32,18 +23,6 @@ export default function ChangelogPage() {
     damping: 30,
     restDelta: 0.001,
   });
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setTimeout(() => {
-        setSubscribed(false);
-        setSubscribeOpen(false);
-        setEmail('');
-      }, 3000);
-    }
-  };
 
   return (
     <div className="bg-black text-white min-h-screen pt-24 sm:pt-32 md:pt-36 pb-16 overflow-hidden relative font-sans">
@@ -137,15 +116,15 @@ export default function ChangelogPage() {
           transition={{ duration: 0.8, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 relative z-20"
         >
-          <motion.button
+          <motion.a
             whileHover={{ scale: 1.04, y: -1 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => setSubscribeOpen(!subscribeOpen)}
+            href="#free-trial"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white text-black font-bold text-xs sm:text-sm shadow-xl hover:bg-zinc-200 transition-all cursor-pointer"
           >
             <Bell className="w-5 h-5 text-black fill-black" />
             <span>Subscribe to updates</span>
-          </motion.button>
+          </motion.a>
 
           <motion.a
             whileHover={{ scale: 1.04, y: -1 }}
@@ -159,51 +138,6 @@ export default function ChangelogPage() {
             <span>Follow us on Twitter</span>
           </motion.a>
         </motion.div>
-
-        {/* Subscribe Modal */}
-        <AnimatePresence>
-          {subscribeOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              transition={{ duration: 0.25 }}
-              className="mt-6 max-w-md mx-auto bg-zinc-950 border border-white/15 rounded-2xl p-4 shadow-2xl relative z-30 backdrop-blur-2xl text-left"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <Bell className="w-3.5 h-3.5 text-purple-400" />
-                  Get Changelog Notifications
-                </span>
-                <button
-                  onClick={() => setSubscribeOpen(false)}
-                  className="text-zinc-500 hover:text-white p-1"
-                >
-                  <X className="w-3.5 h-3.5" />
-                </button>
-              </div>
-              <p className="text-xs text-zinc-400 mb-3 leading-relaxed">
-                Receive an email whenever we release major features or updates.
-              </p>
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@company.com"
-                  className="bg-black border border-white/15 rounded-xl px-3.5 py-2 text-xs text-white placeholder:text-zinc-600 outline-none flex-grow"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs rounded-xl transition-all whitespace-nowrap cursor-pointer"
-                >
-                  {subscribed ? 'Subscribed!' : 'Notify Me'}
-                </button>
-              </form>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
       </section>
 

@@ -22,7 +22,7 @@ export default function FreeTrialSection() {
   ];
 
   return (
-    <section id="free-trial" className="py-16 sm:py-24 md:py-32 bg-black text-white relative overflow-hidden border-t border-white/10">
+    <section id="free-trial" className="py-16 sm:py-24 md:py-32 bg-black text-white relative overflow-hidden border-t border-white/10 scroll-mt-28">
       
       {/* Background Top Ambient Soft Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[400px] sm:h-[500px] bg-emerald-500/5 blur-[120px] sm:blur-[160px] pointer-events-none" />

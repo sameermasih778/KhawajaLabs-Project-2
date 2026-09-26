@@ -85,15 +85,15 @@ export default function FeatureShowcase() {
         </div>
 
         {/* 2x2 Bento Grid Container with Dividers */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10 rounded-3xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-white/10 bg-zinc-950/40 backdrop-blur-xl shadow-2xl mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10 rounded-3xl overflow-hidden bg-zinc-950/40 backdrop-blur-xl shadow-2xl mb-16 isolate">
           
           {/* ==================== CARD 1: Smart Task Assignment ==================== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 lg:p-12 flex flex-col justify-between border-b md:border-b-1 border-white/10"
+            className="p-8 lg:p-12 flex flex-col justify-between min-w-0 h-full border-white/10 max-md:border-b md:border-b md:border-r"
           >
             {/* Header Description */}
             <div className="mb-8">
@@ -111,7 +111,7 @@ export default function FeatureShowcase() {
             </div>
 
             {/* UI Mockup Card */}
-            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4">
+            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4 min-w-0 overflow-hidden">
               
               {/* Top Action Dropdown */}
               <div className="flex items-center justify-between bg-zinc-900/80 border border-white/10 rounded-xl p-3">
@@ -130,28 +130,28 @@ export default function FeatureShowcase() {
                 <div className="text-xs font-bold text-white">Apex Dashboard Design</div>
 
                 {/* Assignee 1 */}
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-950/60 border border-white/5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-300 text-[11px] font-bold">
+                <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-zinc-950/60 border border-white/5 min-w-0">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-7 h-7 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-300 text-[11px] font-bold flex-shrink-0">
                       J
                     </div>
-                    <span className="text-xs font-semibold text-white">Johnson</span>
-                    <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium">
+                    <span className="text-xs font-semibold text-white truncate">Johnson</span>
+                    <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium flex-shrink-0">
                       Current
                     </span>
                   </div>
-                  <span className="text-[11px] text-zinc-500 font-mono">Dec 16, 05:00 - 19:00</span>
+                  <span className="text-[11px] text-zinc-500 font-mono flex-shrink-0">Dec 16, 05:00 - 19:00</span>
                 </div>
 
                 {/* Assignee 2 */}
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-950/60 border border-white/5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 text-[11px] font-bold">
+                <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-zinc-950/60 border border-white/5 min-w-0">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-7 h-7 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 text-[11px] font-bold flex-shrink-0">
                       E
                     </div>
-                    <span className="text-xs font-semibold text-white">Emelle</span>
+                    <span className="text-xs font-semibold text-white truncate">Emelle</span>
                   </div>
-                  <span className="text-[11px] text-zinc-500 font-mono">Dec 20, 18:00 - 23:50</span>
+                  <span className="text-[11px] text-zinc-500 font-mono flex-shrink-0">Dec 20, 18:00 - 23:50</span>
                 </div>
               </div>
 
@@ -161,11 +161,11 @@ export default function FeatureShowcase() {
 
           {/* ==================== CARD 2: Customizable Task Prioritization ==================== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="p-8 lg:p-12 flex flex-col justify-between border-b md:border-b-1 border-white/10"
+            className="p-8 lg:p-12 flex flex-col justify-between min-w-0 h-full border-white/10 max-md:border-b md:border-b"
           >
             {/* Header Description */}
             <div className="mb-8">
@@ -183,7 +183,7 @@ export default function FeatureShowcase() {
             </div>
 
             {/* UI Mockup Card */}
-            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4">
+            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4 min-w-0 overflow-hidden">
               
               {/* Header Bar with Progress Segment Gauges */}
               <div className="flex items-center justify-between border-b border-white/5 pb-3">
@@ -255,11 +255,11 @@ export default function FeatureShowcase() {
 
           {/* ==================== CARD 3: Track Progress Seamlessly ==================== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-8 lg:p-12 flex flex-col justify-between"
+            className="p-8 lg:p-12 flex flex-col justify-between min-w-0 h-full border-white/10 max-md:border-b md:border-r"
           >
             {/* Header Description */}
             <div className="mb-8">
@@ -277,7 +277,7 @@ export default function FeatureShowcase() {
             </div>
 
             {/* UI Mockup Card */}
-            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4">
+            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4 min-w-0 overflow-hidden">
               
               {/* Header Row */}
               <div className="flex items-center justify-between border-b border-white/5 pb-3">
@@ -357,11 +357,11 @@ export default function FeatureShowcase() {
 
           {/* ==================== CARD 4: Auto-Cleanup of Completed Tasks ==================== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="p-8 lg:p-12 flex flex-col justify-between"
+            className="p-8 lg:p-12 flex flex-col justify-between min-w-0 h-full"
           >
             {/* Header Description */}
             <div className="mb-8">
@@ -379,7 +379,7 @@ export default function FeatureShowcase() {
             </div>
 
             {/* UI Mockup Card */}
-            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4">
+            <div className="bg-[#09090b] border border-white/10 rounded-2xl p-5 shadow-2xl space-y-4 min-w-0 overflow-hidden">
               
               {/* Header Title & Timeframe Selector */}
               <div className="flex items-center justify-between border-b border-white/5 pb-3">

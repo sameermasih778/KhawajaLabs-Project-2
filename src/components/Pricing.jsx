@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   CheckCircle2, 
@@ -190,15 +191,16 @@ export default function Pricing() {
                 </div>
 
                 {/* CTA Button */}
-                <button
-                  className={`w-full py-3 px-4 rounded-xl text-sm font-bold transition-all shadow-lg active:scale-95 cursor-pointer mb-3 ${
+                <Link
+                  to="/contact"
+                  className={`w-full py-3 px-4 rounded-xl text-sm font-bold transition-all shadow-lg active:scale-95 cursor-pointer mb-3 inline-flex items-center justify-center ${
                     plan.btnVariant === 'white'
                       ? 'bg-white text-black hover:bg-zinc-200 shadow-white/10'
                       : 'bg-zinc-900 text-white border border-white/15 hover:bg-zinc-800'
                   }`}
                 >
                   {plan.btnText}
-                </button>
+                </Link>
 
                 {/* 7-Day Trial Disclaimer */}
                 <div className="flex items-center justify-center gap-1.5 text-xs text-zinc-400 mb-8 font-normal">

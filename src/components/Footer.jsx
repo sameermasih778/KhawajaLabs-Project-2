@@ -80,7 +80,7 @@ export default function Footer() {
                 <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                 <li><Link to="/blogs" className="hover:text-white transition-colors">Blogs</Link></li>
                 <li><Link to="/changelog" className="hover:text-white transition-colors">Changelog</Link></li>
-                <li><a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
 
@@ -133,9 +133,9 @@ export default function Footer() {
             </div>
 
             <div>
-              <a href="#privacy" className="text-xs sm:text-sm hover:text-white transition-colors">
+              <Link to="/privacy" className="text-xs sm:text-sm hover:text-white transition-colors">
                 Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
 
