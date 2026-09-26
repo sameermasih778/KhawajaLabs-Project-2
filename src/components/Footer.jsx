@@ -1,9 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Mail, ChevronRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 export default function Footer() {
+  const location = useLocation();
+
+  // Handle smooth scrolling to hash sections when navigating from footer links
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      // Small delay to ensure the DOM has rendered after navigation
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
+
   return (
     <footer className="bg-black text-white relative pt-16 pb-12 overflow-hidden border-t border-black/80 font-sans">
       
@@ -61,11 +77,11 @@ export default function Footer() {
                 Quick Navigation
               </h4>
               <ul className="space-y-3 text-sm text-zinc-400 font-normal">
-                <li><a href="#product-overview" className="hover:text-white transition-colors">Product Overview</a></li>
-                <li><a href="#features-showcase" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
-                <li><a href="#faq" className="hover:text-white transition-colors">FAQ's</a></li>
+                <li><Link to="/#product-overview" className="hover:text-white transition-colors">Product Overview</Link></li>
+                <li><Link to="/#features-showcase" className="hover:text-white transition-colors">Features</Link></li>
+                <li><Link to="/#pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+                <li><Link to="/#testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
+                <li><Link to="/#faq" className="hover:text-white transition-colors">FAQ's</Link></li>
               </ul>
             </div>
 
