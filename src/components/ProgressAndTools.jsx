@@ -86,7 +86,7 @@ export default function ProgressAndTools() {
 
             {/* CTA Button */}
 
-            <a href="#contact">
+            <a href="/contact">
               <button className="px-7 py-3.5 text-sm font-bold text-black bg-white hover:bg-zinc-200 transition-all rounded-xl shadow-xl shadow-white/10 active:scale-95 cursor-pointer">
                 Start your 7 day free trial
               </button>
